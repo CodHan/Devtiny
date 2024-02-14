@@ -199,7 +199,6 @@ const StWritePostBtn = styled.button`
 `;
 const None = styled.div`
   color: #7472e7;
-  border: 1px solid white;
   width: 100%;
   height: 300px;
   font-size: 30px;
