@@ -64,7 +64,7 @@ function LoginPage() {
         <S.Section>
           <S.Wrapper>
             <S.H2>LOGIN</S.H2>
-            <form>
+            <S.FormStyle>
               <S.InputWrapper>
                 <S.InputStyle
                   value={email}
@@ -102,7 +102,7 @@ function LoginPage() {
                   로그인
                 </S.ButtonStyle>
               </div>
-            </form>
+            </S.FormStyle>
             <S.JoinWrap>
               <ul>
                 <li>

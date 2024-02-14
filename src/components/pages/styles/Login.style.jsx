@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-//이미지가 import가 안됨,사이즈 좀 줄이기
-//현재 브랜치 에서 커밋 푸쉬하면 PR해야 하는지
+
 export const MainStyle = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80vh;
+  @media screen and (max-width: 390px) {
+    padding-left: 0px;
+    justify-content: center;
+    height: 60vh;
+  }
 `;
 export const Section = styled.section`
   display: flex;
@@ -65,6 +69,24 @@ export const JoinWrap = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
+  @media (max-width: 390px) {
+    display: flex;
+    width: 350px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 75px;
+    & > ul > li {
+      border: 1px solid #ccc;
+
+      border-radius: 3px;
+    }
+    & > ul > li > a {
+      display: block;
+      padding: 20px 0px;
+      width: 100%;
+      heigth: 100%;
+    }
+  }
 `;
 export const EtcLoginWrap = styled.div`
   padding-top: 20px;
@@ -73,4 +95,13 @@ export const EtcLoginWrap = styled.div`
 export const EtcLoginUl = styled.ul`
   padding-top: 27px;
   height: 40px;
+`;
+export const FormStyle = styled.form`
+  @media (max-width: 390px) {
+    display: flex;
+    width: 350px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 75px;
+  }
 `;

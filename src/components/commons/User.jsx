@@ -54,7 +54,7 @@ function User() {
                 fontSize: 'medium',
                 fontWeight: 'bold',
                 backgroundColor: 'darkgray',
-                borderRadius: '10px'
+                borderRadius: '10px',
               }}
               to={'/mypage'}
             >
@@ -77,7 +77,7 @@ function User() {
                 fontSize: 'medium',
                 backgroundColor: 'gray',
                 borderRadius: '10px',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
               }}
               to={'/loginpage'}
             >
@@ -94,7 +94,7 @@ function User() {
                 fontSize: 'medium',
                 fontWeight: 'bold',
                 backgroundColor: 'darkgray',
-                borderRadius: '10px'
+                borderRadius: '10px',
               }}
               to={'/joinpage'}
             >
@@ -115,6 +115,10 @@ const UserSection = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 40px 0px 0px 100px;
+  @media screen and (max-width: 390px) {
+    margin-right: 0px;
+    padding-left: 0px;
+  }
 `;
 
 const Parents = styled.div`

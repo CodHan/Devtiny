@@ -95,6 +95,11 @@ export const Parents = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
+
+  @media screen and (max-width: 390px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 `;
 
 const NoPosts = styled.div`
