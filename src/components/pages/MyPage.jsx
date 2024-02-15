@@ -50,12 +50,18 @@ const MyPage = () => {
       <Header />
       <StLeftArea>
         <StProfileBox>
-          <StProfileImage src={profileImage} alt="Profile" style={{ width: '200px', height: '200px' }} />
+          <StProfileImage
+            src={profileImage}
+            alt="Profile"
+            style={{ width: '200px', height: '200px' }}
+          />
           <StNicknameBox>
             <div>{nickname}</div>
           </StNicknameBox>
         </StProfileBox>
-        <StWritePostBtn onClick={handleNavigateToWritePage}>게시물 작성</StWritePostBtn>
+        <StWritePostBtn onClick={handleNavigateToWritePage}>
+          게시물 작성
+        </StWritePostBtn>
       </StLeftArea>
       <StRightArea>
         {userWriteData.length === 0 ? (
@@ -81,7 +87,7 @@ const MyPage = () => {
 };
 
 MyPage.propTypes = {
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.array.isRequired,
 };
 
 export default MyPage;
@@ -89,6 +95,9 @@ export default MyPage;
 const StAllArea = styled.div`
   width: 1400px;
   margin: auto;
+  @media screen and (max-width: 390px) {
+    width: 100%;
+  }
 `;
 
 const StProfileImage = styled.img`
@@ -106,6 +115,10 @@ const StLeftArea = styled.div`
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 390px) {
+    height: 350px;
+    width: 100%;
+  }
 `;
 
 const StRightArea = styled.div`
@@ -119,6 +132,10 @@ const StRightArea = styled.div`
   background-color: #1c1c20 !important;
   border-radius: 20px;
   padding: 15px;
+  @media screen and (max-width: 390px) {
+    height: 100vh;
+    width: 100%;
+  }
 `;
 
 const StProfileBox = styled.div`
@@ -207,4 +224,7 @@ const None = styled.div`
   flex-direction: column-reverse;
   align-items: center;
   font-weight: bold;
+  @media screen and (max-width: 390px) {
+    font-size: 18px;
+  }
 `;

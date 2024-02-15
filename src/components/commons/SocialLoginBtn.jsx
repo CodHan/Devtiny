@@ -1,8 +1,12 @@
 import React from 'react';
-import GitHubImg from '../style/image/github.png';
-import GoogleImg from '../style/image/google.png';
-import { SocialBtn } from '../style/SocialLogin.style';
-import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import GitHubImg from '../commons/styles/image/github.png';
+import GoogleImg from '../commons/styles/image/google.png';
+import { SocialBtn } from '../commons/styles/SocialLogin.style';
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from 'firebase/auth';
 import { auth, db } from '../../firesbase';
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
@@ -18,10 +22,10 @@ function SocialLoginBtn({ type = 'google' }) {
       const newUser = { email: email, nickName: nickName };
       const collectionRef = collection(db, 'users');
       await addDoc(collectionRef, newUser);
-      confirm('로그인 성공!');
+      alert('로그인 성공!');
       navigate('/');
     } else {
-      confirm('로그인 성공!');
+      alert('로그인 성공!');
       navigate('/');
     }
   };

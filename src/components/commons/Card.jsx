@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import * as S from '../style/Card.style';
+import * as S from './styles/Card.style';
 
 function Card() {
   const posts = useSelector(function (item) {
