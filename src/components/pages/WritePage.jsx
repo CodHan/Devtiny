@@ -53,13 +53,13 @@ const WritePage = () => {
       if (id) {
         const updatedData = {
           title,
-          content
+          content,
         };
         await updateDoc(doc(db, 'posts', id), updatedData);
         dispatch(
           updatePost({
             id: id,
-            updatedData: updatedData
+            updatedData: updatedData,
           })
         );
         alert('게시물이 수정되었습니다!');
@@ -76,8 +76,8 @@ const WritePage = () => {
             day: '2-digit',
             hour: '2-digit',
             minute: '2-digit',
-            hour12: false
-          }).format(new Date())
+            hour12: false,
+          }).format(new Date()),
         };
         const docRef = await addDoc(collection(db, 'posts'), newPost);
         dispatch(addPost({ ...newPost, id: docRef.id }));
@@ -95,7 +95,9 @@ const WritePage = () => {
   const titleChangeHandler = (event) => setTitle(event.target.value);
   const contentChangeHandler = (event) => setContent(event.target.value);
   const cancelBtnhandler = () => {
-    const userConfirmed = window.confirm('변경사항이 모두 초기화됩니다. 정말 나가시겠습니까?');
+    const userConfirmed = window.confirm(
+      '변경사항이 모두 초기화됩니다. 정말 나가시겠습니까?'
+    );
     if (userConfirmed) {
       setTitle('');
       setContent('');
@@ -129,7 +131,11 @@ const WritePage = () => {
             <div>
               {imageUrl && (
                 <div>
-                  <img src={imageUrl} alt="Post" style={{ maxWidth: '500px', maxHeight: '500px' }} />
+                  <img
+                    src={imageUrl}
+                    alt="Post"
+                    style={{ maxWidth: '500px', maxHeight: '500px' }}
+                  />
                 </div>
               )}
             </div>
@@ -158,13 +164,15 @@ const StPageWide = styled.div`
   font-weight: 200;
   width: 100%;
   height: 800px;
-  min-width: 800px;
   margin: auto;
   padding: auto;
   background-color: #1c1c20 !important;
   color: #fff !important;
   border-radius: 20px;
   font-size: x-large;
+  @media screen and (max-width: 390px) {
+    width: 389px;
+    height: 100vh;
 `;
 
 const StTitleWriteBox = styled.input`
@@ -175,14 +183,17 @@ const StTitleWriteBox = styled.input`
   padding: 15px;
   margin: 20px 10px 0px 10px;
   border-radius: 10px;
-  background-color: #1c1c20 !important;
+  background-color: #1c1c20 ;
   font-size: 36px;
   line-height: 230%;
   font-weight: bold;
   /* font-weight: 400; */
   letter-spacing: -0.02px;
   color: #7472e7;
-`;
+  @media screen and (max-width: 390px) {
+    width:300px;
+    margin-top: 70px;
+  `;
 
 const StContentWriteBox = styled.input`
   width: 700px;
@@ -190,11 +201,14 @@ const StContentWriteBox = styled.input`
   padding: 15px;
   margin: 0px 10px 0px 10px;
   border-radius: 10px;
-  background-color: #1c1c20 !important;
-  color: #fff !important;
+  background-color: #1c1c20;
+  color: #fff;
   font-size: 28px;
   font-weight: 600;
   align-items: baseline;
+  @media screen and (max-width: 390px) {
+    width: 300px;
+  }
 `;
 
 const StWriteCancleCompleteBtn = styled.div`

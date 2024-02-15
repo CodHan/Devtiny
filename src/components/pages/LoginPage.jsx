@@ -47,7 +47,7 @@ function LoginPage() {
     e.preventDefault();
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, pw);
-      confirm('로그인 되었습니다.');
+      alert('로그인 되었습니다.');
       navigate('/');
     } catch (error) {
       alert('가입되지 않은 계정입니다.');

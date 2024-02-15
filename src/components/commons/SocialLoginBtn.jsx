@@ -22,10 +22,10 @@ function SocialLoginBtn({ type = 'google' }) {
       const newUser = { email: email, nickName: nickName };
       const collectionRef = collection(db, 'users');
       await addDoc(collectionRef, newUser);
-      confirm('로그인 성공!');
+      alert('로그인 성공!');
       navigate('/');
     } else {
-      confirm('로그인 성공!');
+      alert('로그인 성공!');
       navigate('/');
     }
   };

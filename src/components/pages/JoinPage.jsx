@@ -32,7 +32,7 @@ function JoinPage() {
       const newUser = { email: email, nickName: nickName };
       const collectionRef = collection(db, 'users');
       await addDoc(collectionRef, newUser);
-      confirm('회원가입 성공!');
+      alert('회원가입 성공!');
       navigate('/loginpage');
     } else {
       alert('이미 가입된 이메일입니다.');
