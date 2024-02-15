@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import * as S from '../style/Login.style';
+import * as S from '../pages/styles/Login.style';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firesbase';
 import Header from '../commons/Header';
@@ -47,7 +47,7 @@ function LoginPage() {
     e.preventDefault();
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, pw);
-      confirm('로그인 되었습니다.');
+      alert('로그인 되었습니다.');
       navigate('/');
     } catch (error) {
       alert('가입되지 않은 계정입니다.');
@@ -64,7 +64,7 @@ function LoginPage() {
         <S.Section>
           <S.Wrapper>
             <S.H2>LOGIN</S.H2>
-            <form>
+            <S.FormStyle>
               <S.InputWrapper>
                 <S.InputStyle
                   value={email}
@@ -74,7 +74,9 @@ function LoginPage() {
                   autoFocus="autofocus"
                 />
                 <S.Validation>
-                  {!emailValid && email.length > 0 && <div>올바른 이메일을 입력해주세요.</div>}
+                  {!emailValid && email.length > 0 && (
+                    <div>올바른 이메일을 입력해주세요.</div>
+                  )}
                 </S.Validation>
               </S.InputWrapper>
               <S.InputWrapper>
@@ -86,15 +88,21 @@ function LoginPage() {
                   autoFocus="autofocus"
                 />
                 <S.Validation>
-                  {!pwValid && pw.length > 0 && <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요.</div>}
+                  {!pwValid && pw.length > 0 && (
+                    <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요.</div>
+                  )}
                 </S.Validation>
               </S.InputWrapper>
               <div>
-                <S.ButtonStyle type="submit" disabled={disabled} onClick={signInBtn}>
+                <S.ButtonStyle
+                  type="submit"
+                  disabled={disabled}
+                  onClick={signInBtn}
+                >
                   로그인
                 </S.ButtonStyle>
               </div>
-            </form>
+            </S.FormStyle>
             <S.JoinWrap>
               <ul>
                 <li>

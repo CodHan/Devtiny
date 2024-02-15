@@ -27,7 +27,7 @@ function MainPage() {
 
       const initialPosts = querySnapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data()
+        ...doc.data(),
       }));
 
       dispatch(init(initialPosts));
@@ -45,7 +45,7 @@ function MainPage() {
 
           const users = querySnapshot.docs.map((doc) => ({
             id: doc.id,
-            ...doc.data()
+            ...doc.data(),
           }));
 
           return users;
@@ -58,7 +58,7 @@ function MainPage() {
           loginUser({
             email: loggedUser.email,
             nickName: loggedUser.nickName,
-            isLogin: true
+            isLogin: true,
           })
         );
       } else {
@@ -73,7 +73,11 @@ function MainPage() {
       <Parents>
         <Wrapper>
           <User />
-          {posts.length > 0 ? <Card /> : <NoPosts>작성된 게시글이 없습니다.</NoPosts>}
+          {posts.length > 0 ? (
+            <Card />
+          ) : (
+            <NoPosts>작성된 게시글이 없습니다.</NoPosts>
+          )}
         </Wrapper>
       </Parents>
     </>
@@ -91,6 +95,11 @@ export const Parents = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
+
+  @media screen and (max-width: 390px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 `;
 
 const NoPosts = styled.div`

@@ -43,7 +43,7 @@ const DetailPage = () => {
       <Header />
       <StPageWide>
         <div>
-          <div key={post.id}>
+          <Wrapper key={post.id}>
             <StTitleWriteBox>
               <StTitle>{post.title}</StTitle>
               <StNickNameCreatedAt>
@@ -61,7 +61,7 @@ const DetailPage = () => {
                 ''
               )}
             </StWriteCancleCompleteBtn>
-          </div>
+          </Wrapper>
         </div>
       </StPageWide>
     </div>
@@ -70,41 +70,40 @@ const DetailPage = () => {
 
 DetailPage.propTypes = {
   posts: PropTypes.array.isRequired,
-  setPosts: PropTypes.func.isRequired
+  setPosts: PropTypes.func.isRequired,
 };
 
 export default DetailPage;
+const Wrapper = styled.div`
+  @media screen and (max-width: 390px) {
+
+`;
 
 const StPageWide = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 10px;
   font-weight: 200;
   width: 100%;
   height: 800px;
-  min-width: 800px;
-  margin: auto;
-  padding: auto;
+  margin: 0 auto;
   background-color: #1c1c20 !important;
   color: #fff !important;
   border-radius: 20px;
   font-size: x-large;
+  @media screen and (max-width: 390px) {
+    margin: 15px auto;
 `;
 
 const StTitleWriteBox = styled.div`
-  width: 700px;
+  margin: 15px auto;
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-  padding: 15px;
-  margin: 20px 10px 0px 10px;
-  border-radius: 10px;
-  background-color: #1c1c20 !important;
+  padding: 15px 20px;
+  box-sizing: border-box;
   font-size: 22px;
   line-height: 230%;
   font-weight: bold;
-  /* font-weight: 400; */
   letter-spacing: -0.02px;
   color: #7472e7;
 `;
@@ -115,27 +114,23 @@ const StTitle = styled.div`
 `;
 
 const StNickNameCreatedAt = styled.div`
-  color: #aaaaaa;
+  color: #aaa;
   font-size: 18px;
 `;
 
 const StContentWriteBox = styled.div`
-  width: 700px;
   height: 100px;
-  padding: 15px;
-  margin: 0px 10px 0px 10px;
-  border-radius: 10px;
-  background-color: #1c1c20 !important;
+  padding: 10px 20px;
+  background-color: #1c1c20;
   font-size: 28px;
   font-weight: 600;
-  align-items: baseline;
+  box-sizing: border-box;
 `;
 
 const StWriteCancleCompleteBtn = styled.div`
   display: flex;
   justify-content: flex-end;
-  border-radius: 10px;
-  margin: 20px 10px 0px 0px;
+  margin: 20px 30px 0 0;
 `;
 
 const Stbtn = styled.button`

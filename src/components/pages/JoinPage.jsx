@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import * as S from '../style/JoinPage.style';
+import * as S from '../pages/styles/JoinPage.style';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../../firesbase';
 import { useNavigate } from 'react-router-dom';
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
-import { MainStyle } from '../style/Login.style';
+import { MainStyle } from '../pages/styles/Login.style';
 import Header from '../commons/Header';
 
 function JoinPage() {
@@ -32,7 +32,7 @@ function JoinPage() {
       const newUser = { email: email, nickName: nickName };
       const collectionRef = collection(db, 'users');
       await addDoc(collectionRef, newUser);
-      confirm('회원가입 성공!');
+      alert('회원가입 성공!');
       navigate('/loginpage');
     } else {
       alert('이미 가입된 이메일입니다.');
@@ -100,7 +100,11 @@ function JoinPage() {
     e.preventDefault();
     try {
       addUser(email, nickName);
-      const userCredential = await createUserWithEmailAndPassword(auth, email, pw);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        pw
+      );
     } catch (error) {
       setEmailTxt('');
       setEmailValid(false);
@@ -122,7 +126,12 @@ function JoinPage() {
               <S.BorderTop>
                 <S.EmailForm>
                   <S.EmailLabel>E-mail</S.EmailLabel>
-                  <S.EmailInput value={emailTxt} onChange={emailTextHandler} type="text" />@
+                  <S.EmailInput
+                    value={emailTxt}
+                    onChange={emailTextHandler}
+                    type="text"
+                  />
+                  @
                   {!customEmail ? (
                     <S.EmailSelect name="domain" onChange={emailHandler}>
                       <option value={'naver.com'}>naver.com</option>
@@ -135,29 +144,55 @@ function JoinPage() {
                     <S.CustomInput onChange={(e) => setEmail(e.target.value)} />
                   )}
                 </S.EmailForm>
-                {!emailValid && <S.ValidationJoin>*이메일을 입력해주세요.</S.ValidationJoin>}
+                {!emailValid && (
+                  <S.ValidationJoin>*이메일을 입력해주세요.</S.ValidationJoin>
+                )}
               </S.BorderTop>
               <S.UserBorder>
                 <S.Block>
                   <S.StyleP>
                     <S.Label>닉네임</S.Label>
-                    <S.LabelInput type="text" value={nickName} onChange={nickNameHandler} />
+                    <S.LabelInput
+                      type="text"
+                      value={nickName}
+                      onChange={nickNameHandler}
+                    />
                   </S.StyleP>
-                  {!nickNameValid && <S.ValidationJoin>*두 글자 이상 입력해주세요.</S.ValidationJoin>}
+                  {!nickNameValid && (
+                    <S.ValidationJoin>
+                      *두 글자 이상 입력해주세요.
+                    </S.ValidationJoin>
+                  )}
                 </S.Block>
               </S.UserBorder>
               <S.BorderBottom>
                 <S.Block>
                   <S.StyleP>
                     <S.Label>비밀번호</S.Label>
-                    <S.LabelInput type="password" value={pw} onChange={pwChangeHandler} />
+                    <S.LabelInput
+                      type="password"
+                      value={pw}
+                      onChange={pwChangeHandler}
+                    />
                   </S.StyleP>
-                  {!pwValid && <S.ValidationJoin>*영문, 숫자, 특수문자 포함 8자 이상 입력해주세요.</S.ValidationJoin>}
+                  {!pwValid && (
+                    <S.ValidationJoin>
+                      *영문, 숫자, 특수문자 포함 8자 이상 입력해주세요.
+                    </S.ValidationJoin>
+                  )}
                   <S.StyleP>
                     <S.Label>비밀번호 확인</S.Label>
-                    <S.LabelInput type="password" value={pwCheck} onChange={pwCheckHandler} />
+                    <S.LabelInput
+                      type="password"
+                      value={pwCheck}
+                      onChange={pwCheckHandler}
+                    />
                   </S.StyleP>
-                  {!pwCheckValid && <S.ValidationJoin>*비밀번호를 확인해주세요.</S.ValidationJoin>}
+                  {!pwCheckValid && (
+                    <S.ValidationJoin>
+                      *비밀번호를 확인해주세요.
+                    </S.ValidationJoin>
+                  )}
                 </S.Block>
               </S.BorderBottom>
               <S.JoinBtn disabled={disabled} onClick={subBtn}>
