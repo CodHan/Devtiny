@@ -115,7 +115,7 @@ const UserSection = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 40px 0px 0px 100px;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     margin-right: 0px;
     padding-left: 0px;
   }

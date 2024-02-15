@@ -17,7 +17,7 @@ export const Title = styled.h2`
 `;
 export const Form = styled.form`
   padding: 20px 0;
-  @media (max-width: 390px) {
+  @media (max-width: 768px) {
     padding-left: 0px;
     justify-content: center;
     height: 52vh;
@@ -51,7 +51,7 @@ export const Label = styled.label`
   text-align: left;
   line-height: 40px;
   margin-right: 30px;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     white-space: nowrap;
   }
 `;
@@ -106,7 +106,7 @@ export const JoinBtn = styled.button`
     background: #dadada;
     color: white;
   }
-  @media (max-width: 390px) {
+  @media (max-width: 768px) {
     width: 380px;
     margin-left: 4px;
     padding-right: 140px;
@@ -131,7 +131,7 @@ export const ValidationJoin = styled.div`
   text-indent: 15px;
   font-size: 10px;
   margin: 5px 0 0 100px;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     margin: 4px 0 0 82px;
   }
 `;

@@ -5,7 +5,7 @@ export const MainStyle = styled.main`
   align-items: center;
   justify-content: center;
   height: 80vh;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     padding-left: 0px;
     justify-content: center;
     height: 60vh;
@@ -69,7 +69,7 @@ export const JoinWrap = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
-  @media (max-width: 390px) {
+  @media (max-width: 768px) {
     display: flex;
     width: 350px;
     flex-wrap: wrap;
@@ -97,7 +97,7 @@ export const EtcLoginUl = styled.ul`
   height: 40px;
 `;
 export const FormStyle = styled.form`
-  @media (max-width: 390px) {
+  @media (max-width: 768px) {
     display: flex;
     width: 350px;
     flex-wrap: wrap;

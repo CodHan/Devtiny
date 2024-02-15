@@ -95,7 +95,7 @@ export default MyPage;
 const StAllArea = styled.div`
   width: 1400px;
   margin: auto;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -115,7 +115,7 @@ const StLeftArea = styled.div`
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     height: 350px;
     width: 100%;
   }
@@ -132,7 +132,7 @@ const StRightArea = styled.div`
   background-color: #1c1c20 !important;
   border-radius: 20px;
   padding: 15px;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     height: 100vh;
     width: 100%;
   }
@@ -224,7 +224,7 @@ const None = styled.div`
   flex-direction: column-reverse;
   align-items: center;
   font-weight: bold;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     font-size: 18px;
   }
 `;

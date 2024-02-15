@@ -170,7 +170,7 @@ const StPageWide = styled.div`
   color: #fff !important;
   border-radius: 20px;
   font-size: x-large;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     width: 389px;
     height: 100vh;
 `;
@@ -190,7 +190,7 @@ const StTitleWriteBox = styled.input`
   /* font-weight: 400; */
   letter-spacing: -0.02px;
   color: #7472e7;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     width:300px;
     margin-top: 70px;
   `;
@@ -206,7 +206,7 @@ const StContentWriteBox = styled.input`
   font-size: 28px;
   font-weight: 600;
   align-items: baseline;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     width: 300px;
   }
 `;

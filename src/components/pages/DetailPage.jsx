@@ -75,7 +75,7 @@ DetailPage.propTypes = {
 
 export default DetailPage;
 const Wrapper = styled.div`
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
 
 `;
 
@@ -91,7 +91,7 @@ const StPageWide = styled.div`
   color: #fff !important;
   border-radius: 20px;
   font-size: x-large;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 768px) {
     margin: 15px auto;
 `;
 

@@ -48,7 +48,7 @@ export const CardSection = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   padding-left: 100px;
-  @media (max-width: 390px) {
+  @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
