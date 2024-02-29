@@ -20,6 +20,7 @@ export const Parents = styled.div`
     margin: 10px 0;
   }
 `;
+//주석
 
 export const CardTitle = styled.div`
   color: #8977ad;
